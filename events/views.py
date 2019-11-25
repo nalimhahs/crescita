@@ -8,7 +8,7 @@ from .models import Event, Catagory
 
 def homePage(request):
     catagories = Catagory.objects.all()
-    return render(request, 'index.html', {'catagories': catagories})
+    return render(request, 'events/singleevent.html', {'catagories': catagories})
 
 
 def aboutPage(request):
