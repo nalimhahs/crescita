@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '@6*0y&hwhy+_$)#!42ycmw_!d4#(a&@hqe7&-#q*)fj&w)3zkl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (sys.argv[1] == 'runserver')
 
 ALLOWED_HOSTS = ['localhost', 'crescitatkmce.com', 'crescita.herokuapp.com']
 
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'crescita.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -143,17 +144,10 @@ STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 
 DEFAULT_FILE_STORAGE = 'crescita.storage_backends.MediaStorage'
 
-import socket
+if DEBUG == False:
+    SECURE_SSL_REDIRECT = True
 
 try:
-    HOSTNAME = socket.gethostname()
-    DEBUG = False
-    if DEBUG == False:
-        SECURE_SSL_REDIRECT = True
-except:
-    HOSTNAME = 'localhost'
-
-try: 
     import django_heroku
     django_heroku.settings(locals())
 except:
