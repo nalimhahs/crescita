@@ -1,1 +1,1 @@
-web: gunicorn thm.wsgi
+web: gunicorn crescita.wsgi
