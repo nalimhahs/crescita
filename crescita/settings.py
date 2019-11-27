@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-# import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,7 +25,7 @@ SECRET_KEY = '@6*0y&hwhy+_$)#!42ycmw_!d4#(a&@hqe7&-#q*)fj&w)3zkl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'crescitatkmce.com', 'crescita.herokuapp.com']
 
 
 # Application definition
@@ -143,6 +142,15 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 
 DEFAULT_FILE_STORAGE = 'crescita.storage_backends.MediaStorage'
+
+import socket
+
+try:
+    HOSTNAME = socket.gethostname()
+    if DEBUG == False:
+        SECURE_SSL_REDIRECT = True
+except:
+    HOSTNAME = 'localhost'
 
 try: 
     import django_heroku
