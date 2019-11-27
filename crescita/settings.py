@@ -144,5 +144,8 @@ STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 
 DEFAULT_FILE_STORAGE = 'crescita.storage_backends.MediaStorage'
 
-
-# django_heroku.settings(locals())
+try: 
+    import django_heroku
+    django_heroku.settings(locals())
+except:
+    pass
