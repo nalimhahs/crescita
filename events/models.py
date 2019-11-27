@@ -9,7 +9,7 @@ class Catagory(models.Model):
 
     name = models.CharField(max_length=32)
     desc = models.TextField(max_length=128, null=True)
-    thumbnail = models.ImageField(upload_to='upload/')
+    thumbnail = models.ImageField()
     slug = models.SlugField(blank=True, null=True)
 
     def save(self, *args, **kwargs):
@@ -44,7 +44,7 @@ class Event(models.Model):
         Organizer, on_delete=models.PROTECT, related_name='event_organizer_2', null=True, blank=True)
     event_start = models.DateTimeField(null=True, blank=True)
     event_end = models.DateTimeField(null=True, blank=True)
-    banner_url = models.URLField(null=True, blank=True)
+    banner_image = models.ImageField()
     catagory = models.ForeignKey(
         Catagory, on_delete=models.PROTECT, null=True, blank=True)
     reg_link = models.URLField(null=True, blank=True)

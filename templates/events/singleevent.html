@@ -1,123 +1,157 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ eventName }} | Crescita 20</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
 
-<head>
-  <meta charset="utf-8">
-  <title>CRESCITA 20 | Event Details</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
+    <!-- Favicons -->
+    <link href="{% static 'img/favicon.png" rel="icon' %}" />
+    <link
+      href="{% static 'img/apple-touch-icon.png"
+      rel="apple-touch-icon' %}"
+    />
 
-  <!-- Favicons -->
-  <link href="{% static 'img/favicon.png" rel="icon' %}">
-  <link href="{% static 'img/apple-touch-icon.png" rel="apple-touch-icon' %}">
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800"
+      rel="stylesheet"
+    />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link
+      href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+    />
 
-  <!-- Bootstrap CSS File -->
-  <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link
+      href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'lib/venobox/venobox.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}"
+      rel="stylesheet"
+    />
 
-  <!-- Libraries CSS Files -->
-  <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
-  <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
-  <link href="{% static 'lib/venobox/venobox.css' %}" rel="stylesheet">
-  <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
 
-  <!-- Main Stylesheet File -->
-  <link href="{% static 'css/style.css' %}" rel="stylesheet">
-
-  <!-- =======================================================
+    <!-- =======================================================
     Theme Name: TheEvent
     Theme URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
     Author: BootstrapMade.com
     License: https://bootstrapmade.com/license/
   ======================================================= -->
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!--==========================
       Header
     ============================-->
     <header id="header" class="header-fixed">
       <div class="container">
-  
         <div id="logo" class="pull-left">
           <!-- Uncomment below if you prefer to use a text logo -->
           <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
-          <a href="index.html#intro" class="scrollto"><img src="{% static 'img/logo.png'%}" alt="" title=""></a>
+          <a href="index.html#intro" class="scrollto"
+            ><img src="{% static 'img/logo.png'%}" alt="" title=""
+          /></a>
         </div>
-  
+
         <nav id="nav-menu-container">
-            <ul class="nav-menu">
-              <li class="menu-active"><a href="#intro">Home</a></li>
-              <li><a href="#speakers">Events</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#schedule">Schedule</a></li>
-              <li><a href="#venue">Venue</a></li>
-              <li><a href="#gallery">Gallery</a></li>
-              <li><a href="#supporters">Sponsors</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li class="buy-tickets"><a href="#buy-tickets">Register</a></li>
-            </ul>
-          </nav>
-           </div>
-    </header><!-- #header -->
-  
+          <ul class="nav-menu">
+            <li class="menu-active"><a href="#intro">Home</a></li>
+            <li><a href="#speakers">Events</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#venue">Venue</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#supporters">Sponsors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="buy-tickets"><a href="#buy-tickets">Register</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- #header -->
+
     <main id="main" class="main-page">
-  
       <!--==========================
      Single Event Details Section
       ============================-->
       <section id="speakers-details" class="wow fadeIn">
         <div class="container">
           <div class="section-header">
-            <h2>Event Details</h2>
-            <p>Praesentium ut qui possimus sapiente nulla.</p>
+            <h2>{{ event.name }}</h2>
           </div>
-  
+
           <div class="row">
             <div class="col-md-6">
-              <img src="{% static 'img/speakers/1.jpg' %}" alt="Speaker 1" class="img-fluid">
+              <img
+                src="{{ event.banner_image.url }}"
+                alt="Speaker 1"
+                class="img-fluid"
+              />
             </div>
-  
-            <div class="col-md-6">
-              <div class="details">
-                <h2>Event Name</h2>
-                <p style="font-weight: 500;
-                color: #9195a2;font-size: 18px;">15 January 2020</p>
-                <p>Voluptatem perferendis sed assumenda voluptatibus. Laudantium molestiae sint. Doloremque odio dolore dolore sit. Quae labore alias ea omnis ex expedita sapiente molestias atque. Optio voluptas et.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae unde aut delectus. Animi vero nostrum laboriosam quaerat necessitatibus dolorem quibusdam voluptatem accusantium error. Similique magni aperiam repellendus est <ullam class="lo">lo
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, perferendis ex unde est debitis autem dolorem odio fugit cupiditate, suscipit ipsum sunt! Distinctio fugiat omnis excepturi quibusdam neque! Nemo, <culpa class="lo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis possimus suscipit consectetur excepturi facere nulla dolores distinctio aperiam velit unde dolorem veniam deserunt praesentium quisquam maiores nostrum, aspernatur libero impedit!</culpa>
-                </ullam></p>
-                <p>Aboriosam inventore dolorem inventore nam est esse. Aperiam voluptatem nisi molestias laborum ut. Porro dignissimos eum. Tempore dolores minus unde est voluptatum incidunt ut aperiam.</p> 
-                <br>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div style="width: 3px;height: 70px;background: #f82249;"></div>
-                    </div>
-                    <div class="col-md-4" style="margin-left: -150px;">
-                    <p>Organizer1_Name:123456789</p>
-                    </div>
+
+            <div class="col-md-6" style="padding: 0px 3%;">
+              <div class="details" style="padding-left: 2%;">
+                {{ event.desc | safe }}
+                <br />
+                <br />
+                <p style="font-size: 1.25rem; font-weight: bold;">
+                  {% if event.event_start %} 
+                  Date : {{ event.event_start|date:"l, d M Y" }} 
+                  {% endif %}
+                </p>
+                {% if event.organizer_1 or event.organizer_2 %}
+                <p
+                  style="font-size: 1.175rem; font-weight: bold; margin: 20px 0px;"
+                >
+                  Coordinators:
+                </p>
+                <div class="row" style="font-weight: bold; font-size: 1.15rem;">
+                  <div class="col-md-4">
+                    <div
+                      style="width: 3px;height: 60px;background: #f82249;"
+                    ></div>
                   </div>
-                  <div class="row" style="margin-left:40px;margin-top: -28px;">
-                    <p >Organizer2_Name:123456789</p> 
+                  <div class="col-md-4" style="margin-left: -157px;">
+                    <p>
+                      {% if event.organizer_1 %} {{ event.organizer_1 }} : {{ event.organizer_1.phone }} {% endif %}
+                    </p>
+                  </div>
+                  <div
+                    class="col-md-4"
+                    style="margin-left: -177px; margin-top: 30px;"
+                  >
+                    <p>
+                      {% if event.organizer_2 %} {{ event.organizer_2 }} : {{ event.organizer_2.phone }} {% endif %}
+                    </p>
+                  </div>
                 </div>
-                </div>
-                <button style="color: #fff;background: #f82249;margin-left:20px;padding: 7px 22px;border-radius: 35px;border: 8px solid #f82249;transition: all ease-in-out 0.3s;font-weight: 550;margin-top: 40px;line-height: 1;font-size: 13px;" onclick="">Register Now</button>
+                {% endif %}
               </div>
+              <a href="{{ event.reg_link }}"
+                ><button
+                  style="color: #fff;background: #f82249;padding: 7px 22px;border-radius: 35px;border: 8px solid #f82249;transition: all ease-in-out 0.3s;font-weight: 550;margin-top: 40px;line-height: 1;font-size: 13px;"
+                  onclick=""
+                >
+                  Register Now
+                </button></a
+              >
             </div>
-            
           </div>
         </div>
-  
       </section>
-  
     </main>
-  
-  
+
     <!--==========================
       Footer
     ============================-->
@@ -125,58 +159,85 @@
       <div class="footer-top">
         <div class="container">
           <div class="row">
-  
             <div class="col-lg-3 col-md-6 footer-info">
-              <img src="{% static 'img/logo.png' %}" alt="TheEvenet">
-              <p>In alias aperiam. Placeat tempore facere. Officiis voluptate ipsam vel eveniet est dolor et totam porro. Perspiciatis ad omnis fugit molestiae recusandae possimus. Aut consectetur id quis. In inventore consequatur ad voluptate cupiditate debitis accusamus repellat cumque.</p>
+              <img src="{% static 'img/logo.png' %}" alt="TheEvenet" />
+              <p>
+                In alias aperiam. Placeat tempore facere. Officiis voluptate
+                ipsam vel eveniet est dolor et totam porro. Perspiciatis ad
+                omnis fugit molestiae recusandae possimus. Aut consectetur id
+                quis. In inventore consequatur ad voluptate cupiditate debitis
+                accusamus repellat cumque.
+              </p>
             </div>
-  
+
             <div class="col-lg-3 col-md-6 footer-links">
               <h4>Useful Links</h4>
               <ul>
                 <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
-                <li><i class="fa fa-angle-right"></i> <a href="#">About us</a></li>
-                <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
-                <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
-                <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
+                <li>
+                  <i class="fa fa-angle-right"></i> <a href="#">About us</a>
+                </li>
+                <li>
+                  <i class="fa fa-angle-right"></i> <a href="#">Services</a>
+                </li>
+                <li>
+                  <i class="fa fa-angle-right"></i>
+                  <a href="#">Terms of service</a>
+                </li>
+                <li>
+                  <i class="fa fa-angle-right"></i>
+                  <a href="#">Privacy policy</a>
+                </li>
               </ul>
             </div>
-  
+
             <div class="col-lg-3 col-md-6 footer-links">
               <h4>Useful Links</h4>
               <ul>
                 <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
-                <li><i class="fa fa-angle-right"></i> <a href="#">About us</a></li>
-                <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
-                <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
-                <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
+                <li>
+                  <i class="fa fa-angle-right"></i> <a href="#">About us</a>
+                </li>
+                <li>
+                  <i class="fa fa-angle-right"></i> <a href="#">Services</a>
+                </li>
+                <li>
+                  <i class="fa fa-angle-right"></i>
+                  <a href="#">Terms of service</a>
+                </li>
+                <li>
+                  <i class="fa fa-angle-right"></i>
+                  <a href="#">Privacy policy</a>
+                </li>
               </ul>
             </div>
-  
+
             <div class="col-lg-3 col-md-6 footer-contact">
               <h4>Contact Us</h4>
               <p>
-                A108 Adam Street <br>
-                New York, NY 535022<br>
-                United States <br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
+                A108 Adam Street <br />
+                New York, NY 535022<br />
+                United States <br />
+                <strong>Phone:</strong> +1 5589 55488 55<br />
+                <strong>Email:</strong> info@example.com<br />
               </p>
-  
+
               <div class="social-links">
                 <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
                 <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                <a href="#" class="instagram"
+                  ><i class="fa fa-instagram"></i
+                ></a>
+                <a href="#" class="google-plus"
+                  ><i class="fa fa-google-plus"></i
+                ></a>
                 <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
               </div>
-  
             </div>
-  
           </div>
         </div>
       </div>
-  
+
       <div class="container">
         <div class="copyright">
           &copy; Copyright <strong>TheEvent</strong>. All Rights Reserved
@@ -191,10 +252,11 @@
           Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         </div>
       </div>
-    </footer><!-- #footer -->
-  
+    </footer>
+    <!-- #footer -->
+
     <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
-  
+
     <!-- JavaScript Libraries -->
     <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
     <script src="{% static 'lib/jquery/jquery-migrate.min.js' %}"></script>
@@ -205,10 +267,10 @@
     <script src="{% static 'lib/wow/wow.min.js' %}"></script>
     <script src="{% static 'lib/venobox/venobox.min.js' %}"></script>
     <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
-  
+
     <!-- Contact Form JavaScript File -->
     <script src="contactform/contactform.js"></script>
-  
+
     <!-- Template Main Javascript File -->
     <script src="{% static 'js/main.js' %}"></script>
   </body>

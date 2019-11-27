@@ -20,14 +20,18 @@ def contactPage(request):
 
 
 def catagoryListing(request, catagory):
-    events = Event.objects.filter(catagory__name=catagory)
+    events = Event.objects.filter(catagory__slug=catagory)
     try:
         p = Catagory.objects.get(name=catagory)
     except Catagory.DoesNotExist:
         raise Http404
-    return render(request, 'events/eventlist.html', {'events': events, 'catagory': catagory})
+    return render(request, 'events/eventlist.html', {'events': events, 'catagory': p})
 
 
 def eventListing(request, catagory, event_slug):
     event = Event.objects.filter(event_slug=event_slug)
-    return render(request, 'events/singleevent.html', {'event': event, 'eventName': event[0].name})
+    try:
+        e = event[0]
+    except IndexError as err:
+        raise Http404
+    return render(request, 'events/singleevent.html', {'event': e, 'eventName': e.name})

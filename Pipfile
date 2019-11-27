@@ -11,6 +11,8 @@ autopep8 = "*"
 django = "*"
 gunicorn = "*"
 pillow = "*"
+boto3 = "*"
+django-storages = "*"
 
 [requires]
 python_version = "3.6"
