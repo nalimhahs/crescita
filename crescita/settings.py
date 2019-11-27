@@ -147,6 +147,7 @@ import socket
 
 try:
     HOSTNAME = socket.gethostname()
+    DEBUG = False
     if DEBUG == False:
         SECURE_SSL_REDIRECT = True
 except:
