@@ -138,6 +138,7 @@
                 </div>
                 {% endif %}
               </div>
+              {% if event.reg_link %}
               <a href="{{ event.reg_link }}"
                 ><button
                   style="color: #fff;background: #f82249;padding: 7px 22px;border-radius: 35px;border: 8px solid #f82249;transition: all ease-in-out 0.3s;font-weight: 550;margin-top: 40px;line-height: 1;font-size: 13px;"
@@ -146,6 +147,7 @@
                   Register Now
                 </button></a
               >
+              {% endif %}
             </div>
           </div>
         </div>
