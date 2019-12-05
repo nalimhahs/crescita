@@ -22,7 +22,7 @@ def contactPage(request):
 def catagoryListing(request, catagory):
     events = Event.objects.filter(catagory__slug=catagory)
     try:
-        p = Catagory.objects.get(name=catagory)
+        p = Catagory.objects.get(slug=catagory)
     except Catagory.DoesNotExist:
         raise Http404
     return render(request, 'events/eventlist.html', {'events': events, 'catagory': p})
