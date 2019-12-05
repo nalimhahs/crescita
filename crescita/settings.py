@@ -24,7 +24,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '@6*0y&hwhy+_$)#!42ycmw_!d4#(a&@hqe7&-#q*)fj&w)3zkl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = (sys.argv[1] == 'runserver')
+# DEBUG = (sys.argv[1] == 'runserver')
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', 'crescitatkmce.com', 'crescita.herokuapp.com']
 
