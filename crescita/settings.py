@@ -24,8 +24,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '@6*0y&hwhy+_$)#!42ycmw_!d4#(a&@hqe7&-#q*)fj&w)3zkl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = (sys.argv[1] == 'runserver')
-DEBUG = True
+DEBUG = (sys.argv[1] == 'runserver')
+# DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', 'crescitatkmce.com', 'crescita.herokuapp.com']
 
@@ -153,3 +153,37 @@ try:
     django_heroku.settings(locals())
 except:
     pass
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format' : "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
+            'datefmt' : "%d/%b/%Y %H:%M:%S"
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'crescita.log',
+            'formatter': 'verbose'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers':['file'],
+            'propagate': True,
+            'level':'DEBUG',
+        },
+        'crescita': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+        },
+    }
+}
