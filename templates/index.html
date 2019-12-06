@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-
+{% load static %}
     <!--==========================
     Intro Section
   ============================-->
-    <section id="intro">
+    <div class="loader-wrapper">
+      <img src="{% static 'img/logo2.png' %}" alt="" style="height: 10vh; width: 10vh;">
+    </div>
+    <section id="intro" style="background: url({% static 'img/intro-bg2.jpg' %}) top center;">
       <div class="intro-container wow fadeIn">
         <h1 class="mb-4 pb-0">CRESCITA 20</h1>
         <p class="mb-4 pb-0">
