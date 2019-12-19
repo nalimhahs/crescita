@@ -11,6 +11,10 @@ def homePage(request):
     return render(request, 'index.html', {'catagories': catagories})
 
 
+def crpPage(request):
+    return render(request, 'crp.html')
+
+
 def aboutPage(request):
     return render(request, 'about.html', {})
 

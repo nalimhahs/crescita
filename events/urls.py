@@ -3,6 +3,7 @@ from .views import *
 
 urlpatterns = [
     path('', homePage),
+    path('crp', crpPage),
     path('about', aboutPage),
     path('contact', contactPage),
     path('<slug:catagory>', catagoryListing),
