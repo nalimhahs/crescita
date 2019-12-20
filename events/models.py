@@ -26,7 +26,7 @@ class Organizer(models.Model):
 
     name = models.CharField(max_length=32)
     phone = models.CharField(max_length=32)
-    email = models.EmailField()
+    email = models.EmailField(blank=True, null=True)
 
     def __str__(self):
         return self.name
