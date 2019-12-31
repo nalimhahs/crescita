@@ -6,6 +6,7 @@ urlpatterns = [
     path('crp', crpPage),
     path('about', aboutPage),
     path('contact', contactPage),
+    path('updates', updatedView),
     path('<slug:catagory>', catagoryListing),
     path('<slug:catagory>/<slug:event_slug>', eventListing),
 ]

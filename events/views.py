@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import Http404
 
-from .models import Event, Catagory
+from .models import Event, Catagory, Update
 
 # Create your views here.
 
@@ -39,3 +39,8 @@ def eventListing(request, catagory, event_slug):
     except IndexError as err:
         raise Http404
     return render(request, 'events/singleevent.html', {'event': e, 'eventName': e.name})
+
+
+def updatedView(request):
+    updates = Update.objects.all()
+    return render(request, 'updates.html', {'updates': updates})
