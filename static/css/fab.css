@@ -1,0 +1,26 @@
+.fab {
+    position: fixed;
+    bottom: 5vh;
+    left: 5vw;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f82249;
+    box-shadow: 4px 10px 44px 0px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.fab:hover {
+    transform: scale(1.1);
+    transition: 0.1s ease-in;
+}
+
+
+.logo {
+    height: 5vh;
+    width: 5vh;
+}

@@ -1,16 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
-{% load static %}
+    {% load static %}
+
+    <a href="/updates" class="fab" title="Updates">
+        <img class="logo" src="{% static 'img/bell.svg' %}">
+    </a>
     <!--==========================
     Intro Section
   ============================-->
     <div class="loader-wrapper">
-      <img src="{% static 'img/anim.gif' %}" alt="" style="height: 18vh; width: 15vh;">
+        <img src="{% static 'img/anim.gif' %}" alt="" style="height: 18vh; width: 15vh;">
     </div>
     <section id="intro" style="background: url({% static 'img/intro-bg2.jpg' %}) top center;">
-      <div class="intro-container wow fadeIn">
-        <h1 class="mb-4 pb-0">CRESCITA 20</h1>
-        <p class="mb-4 pb-0">
+        <div class="intro-container wow fadeIn">
+            <h1 class="mb-4 pb-0">CRESCITA 20</h1>
+            <p class="mb-4 pb-0">
           National Level Civil Engineering Techno-Cultural Fest
         </p>
         <p class="mb-4 pb-0">18th - 19th January 2020</p>
