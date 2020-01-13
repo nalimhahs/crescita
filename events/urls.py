@@ -7,6 +7,7 @@ urlpatterns = [
     path('about', aboutPage),
     path('contact', contactPage),
     path('updates', updatedView),
+    path('accomodation', accomodationView),
     path('<slug:catagory>', catagoryListing),
     path('<slug:catagory>/<slug:event_slug>', eventListing),
 ]

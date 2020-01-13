@@ -23,6 +23,10 @@ def contactPage(request):
     return render(request, 'contact.html', {})
 
 
+def accomodationView(request):
+    return render(request, 'accomodation.html', {})
+
+
 def catagoryListing(request, catagory):
     events = Event.objects.filter(catagory__slug=catagory)
     try:
